@@ -8,7 +8,6 @@ test("can pop and push elements", () => {
     s.push('B')
     s.push('C')
     s.push('D')
-    s.print()
     expect(s.get_count()).toBe(4)
     expect(s.pop()).toBe('D')
     expect(s.get_count()).toBe(3)

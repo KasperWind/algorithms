@@ -1,0 +1,25 @@
+import { expect, test } from "bun:test"
+import { Stack } from "./stack.js"
+
+test("can pop and push elements", () => {
+    const s = new Stack()
+    s.push('A')
+    expect(s.get_count()).toBe(1)
+    s.push('B')
+    s.push('C')
+    s.push('D')
+    s.print()
+    expect(s.get_count()).toBe(4)
+    expect(s.pop()).toBe('D')
+    expect(s.get_count()).toBe(3)
+    expect(s.pop()).toBe('C')
+    expect(s.get_count()).toBe(2)
+    expect(s.pop()).toBe('B')
+    expect(s.get_count()).toBe(1)
+    expect(s.pop()).toBe('A')
+    expect(s.get_count()).toBe(0)
+    expect(s.pop()).toBe(undefined)
+    expect(s.get_count()).toBe(0)
+    expect(s.pop()).toBe(undefined)
+    expect(s.get_count()).toBe(0)
+})
